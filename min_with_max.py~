@@ -11,6 +11,7 @@ def min_max(numbers):
             min = i
         elif i > max:
             max = i
+#   return abs(min) + abs(max)
     return max - min
     
 print(min_max(num_list))
