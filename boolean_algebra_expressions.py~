@@ -35,7 +35,7 @@ print(bool_algebra(1,1,"disjunction"))
 # Good solution, but not mine
 
 OPERATION_NAMES = ("conjunction", "disjunction", "implication", "exclusive", "equivalence")
-
+?
 def boolean(x, y, operation):
     results = {"conjunction" : x and y,
                "disjunction" : x or y,
