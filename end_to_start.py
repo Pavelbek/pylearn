@@ -1,14 +1,25 @@
-# Our goal here is to check if at least one word finish with starting suffix on next word
+# Our goal is to check if one word finishes by other full word. Example: duckwalk , walk  . And if we see this function returns True. 
 
-words_set = {"hello", "la", "hellow", "cow"}
-def checkio(words_set):
-    for word in sorted(words_set):
-        for index in range(len(word) + 1):
-            slc = 1
-            suffix = word[len(word)- slc: ]
-            if any([x.startswith(suffix) for x in sorted(words_set)]):
+words_set = {"hello", "lo", "he"}
+def check(words_set):
+    for word in words_set:
+        for end_w in words_set:
+            if end_w == word:
+                continue
+            elif word.endswith(end_w):
                 return True
-            slc += 1
     return False
     
-print(checkio(words_set))
+check(words_set)
+
+
+# Not mine solution
+def checkio(words):
+    """
+    You can iterate throught set.
+    """
+    for w1 in words:
+        for w2 in words:
+            if w1 != w2 and (w1.endswith(w2) or w2.endswith(w1)):
+                return True
+    return False
